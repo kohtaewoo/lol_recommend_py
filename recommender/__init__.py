@@ -4,11 +4,7 @@ import joblib
 import pandas as pd
 import requests
 
-from recommender.utils import HEADERS, REGION_KR, REGION_ACCOUNT, load_zscore_penalty
-
-# 환경 설정
-REGION_KR = "https://kr.api.riotgames.com"
-REGION_ACCOUNT = "https://americas.api.riotgames.com"
+from recommender.utils import REGION_KR, REGION_ACCOUNT, load_zscore_penalty
 
 # 현재 파일 기준 base 경로 설정
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -48,7 +44,10 @@ with open(bot_path, "r") as f: bot_data = json.load(f)
 with open(support_path, "r") as f: support_data = json.load(f)
 
 champion_positions = {}
-for data, role in [(top_data, "Top"), (mid_data, "Mid"), (jungle_data, "Jungle"), (bot_data, "Bottom"), (support_data, "Support")]:
+for data, role in [
+    (top_data, "Top"), (mid_data, "Mid"), (jungle_data, "Jungle"),
+    (bot_data, "Bottom"), (support_data, "Support")
+]:
     for champ in data:
         champion_positions.setdefault(champ, []).append(role)
 

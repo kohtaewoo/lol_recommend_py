@@ -6,9 +6,6 @@ import os
 REGION_KR = "https://kr.api.riotgames.com"
 REGION_ACCOUNT = "https://americas.api.riotgames.com"
 
-# ✅ API 헤더 (recommend.py에서 동적으로 세팅)
-HEADERS = {}
-
 # ✅ Z-score 기반 패널티 가중치 계산 함수
 def load_zscore_penalty(excel_path, scale=1.0):
     """

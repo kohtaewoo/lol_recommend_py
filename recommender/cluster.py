@@ -6,7 +6,6 @@ from sklearn.preprocessing import normalize, StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 
-from recommender.utils import HEADERS
 from recommender import (
     REGION_KR, REGION_ACCOUNT,
     df_master, champion_id_to_name,
@@ -14,14 +13,24 @@ from recommender import (
 )
 
 
-def predict_user_cluster(riot_id):
+def predict_user_cluster(riot_id, headers):
     name, tag = map(quote, riot_id.split("#", 1))
 
     # Riot API 호출
-    res1 = requests.get(f"{REGION_ACCOUNT}/riot/account/v1/accounts/by-riot-id/{name}/{tag}", headers=HEADERS)
-    puuid = res1.json()["puuid"]
+    res1 = requests.get(
+        f"{REGION_ACCOUNT}/riot/account/v1/accounts/by-riot-id/{name}/{tag}",
+        headers=headers
+    )
+    res1.raise_for_status()
+    puuid = res1.json().get("puuid")
+    if not puuid:
+        raise ValueError("Missing 'puuid' in Riot API response")
 
-    res2 = requests.get(f"{REGION_KR}/lol/champion-mastery/v4/champion-masteries/by-puuid/{puuid}", headers=HEADERS)
+    res2 = requests.get(
+        f"{REGION_KR}/lol/champion-mastery/v4/champion-masteries/by-puuid/{puuid}",
+        headers=headers
+    )
+    res2.raise_for_status()
     mastery_data = res2.json()[:5]
 
     # 상위 5챔프 기반 사용자 벡터 생성

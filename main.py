@@ -1,12 +1,12 @@
 from flask import Flask, request, jsonify
+from recommender.recommend import recommend_by_riot_id
+from recommender.cluster import predict_user_cluster
 import requests
 from urllib.parse import quote, unquote
 import os
 from dotenv import load_dotenv
-from recommender.recommend import recommend_by_riot_id
-from recommender.cluster import predict_user_cluster
 
-# ✅ Load .env for local, ignored on Render
+# ✅ .env 파일 읽기
 load_dotenv()
 RIOT_API_KEY = os.getenv("RIOT_API_KEY")
 
@@ -15,12 +15,18 @@ app = Flask(__name__)
 @app.route("/recommend", methods=["GET"])
 def recommend():
     riot_id = request.args.get("riotId")
+
     if not riot_id or not RIOT_API_KEY:
         return jsonify({"error": "riotId and Riot API key are required"}), 400
 
     try:
         riot_id = unquote(riot_id)
-        recommendations, input_champions = recommend_by_riot_id(riot_id)
+
+        # ✅ HEADERS 직접 수정하지 않고 요청마다 로컬 변수로 사용
+        headers = {"X-Riot-Token": RIOT_API_KEY}
+
+        # ✅ recommend_by_riot_id 내부에서 headers를 전달받도록 수정 필요
+        recommendations, input_champions = recommend_by_riot_id(riot_id, headers)
         cluster_id, cluster_title, cluster_desc = predict_user_cluster(riot_id)
 
         result = {
@@ -36,9 +42,11 @@ def recommend():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+
 @app.route("/check", methods=["GET"])
 def check_user():
     riot_id = request.args.get("riotId")
+
     if not riot_id or not RIOT_API_KEY:
         return jsonify({"error": "riotId and Riot API key are required"}), 400
 
@@ -54,5 +62,5 @@ def check_user():
         return jsonify({"exists": False})
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 5000))  # ✅ Render 호환
     app.run(host="0.0.0.0", port=port)
