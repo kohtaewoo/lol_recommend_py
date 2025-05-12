@@ -22,12 +22,12 @@ def recommend():
     try:
         riot_id = unquote(riot_id)
 
-        # ✅ HEADERS 직접 수정하지 않고 요청마다 로컬 변수로 사용
+        # ✅ 요청마다 headers 생성
         headers = {"X-Riot-Token": RIOT_API_KEY}
 
-        # ✅ recommend_by_riot_id 내부에서 headers를 전달받도록 수정 필요
+        # ✅ headers 인자 모두 전달
         recommendations, input_champions = recommend_by_riot_id(riot_id, headers)
-        cluster_id, cluster_title, cluster_desc = predict_user_cluster(riot_id)
+        cluster_id, cluster_title, cluster_desc = predict_user_cluster(riot_id, headers)
 
         result = {
             "riotId": riot_id,
@@ -35,10 +35,12 @@ def recommend():
             "clusterDesc": cluster_desc,
             "inputChampions": input_champions,
             "recommendations": {
-                role: [str(champ) for champ in champs] for role, champs in recommendations.items()
+                role: [str(champ) for champ in champs]
+                for role, champs in recommendations.items()
             }
         }
         return jsonify(result)
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -60,6 +62,7 @@ def check_user():
         return jsonify({"exists": res.status_code == 200})
     except:
         return jsonify({"exists": False})
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # ✅ Render 호환
