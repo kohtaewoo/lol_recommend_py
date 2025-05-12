@@ -9,23 +9,27 @@ from dotenv import load_dotenv
 # ✅ .env 파일 읽기
 load_dotenv()
 RIOT_API_KEY = os.getenv("RIOT_API_KEY")
+BACKEND_AUTH_KEY = os.getenv("BACKEND_AUTH_KEY")
 
 app = Flask(__name__)
 
+# ✅ 공통 인증 함수
+def is_authorized():
+    return request.headers.get("X-Backend-Key") == BACKEND_AUTH_KEY
+
 @app.route("/recommend", methods=["GET"])
 def recommend():
-    riot_id = request.args.get("riotId")
+    if not is_authorized():
+        return jsonify({"error": "Unauthorized"}), 401
 
+    riot_id = request.args.get("riotId")
     if not riot_id or not RIOT_API_KEY:
         return jsonify({"error": "riotId and Riot API key are required"}), 400
 
     try:
         riot_id = unquote(riot_id)
-
-        # ✅ 요청마다 headers 생성
         headers = {"X-Riot-Token": RIOT_API_KEY}
 
-        # ✅ headers 인자 모두 전달
         recommendations, input_champions = recommend_by_riot_id(riot_id, headers)
         cluster_id, cluster_title, cluster_desc = predict_user_cluster(riot_id, headers)
 
@@ -47,8 +51,10 @@ def recommend():
 
 @app.route("/check", methods=["GET"])
 def check_user():
-    riot_id = request.args.get("riotId")
+    if not is_authorized():
+        return jsonify({"error": "Unauthorized"}), 401
 
+    riot_id = request.args.get("riotId")
     if not riot_id or not RIOT_API_KEY:
         return jsonify({"error": "riotId and Riot API key are required"}), 400
 
@@ -65,5 +71,5 @@ def check_user():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # ✅ Render 호환
+    port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
