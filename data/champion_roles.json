@@ -1,0 +1,682 @@
+{
+  "Aatrox": {
+    "main_role": "Fighter",
+    "sub_role": null
+  },
+  "Ahri": {
+    "main_role": "Mage",
+    "sub_role": "Assassin"
+  },
+  "Akali": {
+    "main_role": "Assassin",
+    "sub_role": null
+  },
+  "Akshan": {
+    "main_role": "Marksman",
+    "sub_role": "Assassin"
+  },
+  "Alistar": {
+    "main_role": "Tank",
+    "sub_role": "Support"
+  },
+  "Ambessa": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Amumu": {
+    "main_role": "Tank",
+    "sub_role": "Support"
+  },
+  "Anivia": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Annie": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Aphelios": {
+    "main_role": "Marksman",
+    "sub_role": null
+  },
+  "Ashe": {
+    "main_role": "Marksman",
+    "sub_role": "Support"
+  },
+  "AurelionSol": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Aurora": {
+    "main_role": "Mage",
+    "sub_role": "Assassin"
+  },
+  "Azir": {
+    "main_role": "Mage",
+    "sub_role": "Marksman"
+  },
+  "Bard": {
+    "main_role": "Support",
+    "sub_role": "Mage"
+  },
+  "Belveth": {
+    "main_role": "Fighter",
+    "sub_role": null
+  },
+  "Blitzcrank": {
+    "main_role": "Tank",
+    "sub_role": "Support"
+  },
+  "Brand": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Braum": {
+    "main_role": "Tank",
+    "sub_role": "Support"
+  },
+  "Briar": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Caitlyn": {
+    "main_role": "Marksman",
+    "sub_role": null
+  },
+  "Camille": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Cassiopeia": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Chogath": {
+    "main_role": "Tank",
+    "sub_role": "Mage"
+  },
+  "Corki": {
+    "main_role": "Marksman",
+    "sub_role": "Mage"
+  },
+  "Darius": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Diana": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Draven": {
+    "main_role": "Marksman",
+    "sub_role": null
+  },
+  "DrMundo": {
+    "main_role": "Tank",
+    "sub_role": "Fighter"
+  },
+  "Ekko": {
+    "main_role": "Assassin",
+    "sub_role": "Mage"
+  },
+  "Elise": {
+    "main_role": "Assassin",
+    "sub_role": "Mage"
+  },
+  "Evelynn": {
+    "main_role": "Assassin",
+    "sub_role": "Mage"
+  },
+  "Ezreal": {
+    "main_role": "Marksman",
+    "sub_role": "Mage"
+  },
+  "Fiddlesticks": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Fiora": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Fizz": {
+    "main_role": "Assassin",
+    "sub_role": "Fighter"
+  },
+  "Galio": {
+    "main_role": "Tank",
+    "sub_role": "Mage"
+  },
+  "Gangplank": {
+    "main_role": "Fighter",
+    "sub_role": null
+  },
+  "Garen": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Gnar": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Gragas": {
+    "main_role": "Fighter",
+    "sub_role": "Mage"
+  },
+  "Graves": {
+    "main_role": "Marksman",
+    "sub_role": null
+  },
+  "Gwen": {
+    "main_role": "Fighter",
+    "sub_role": null
+  },
+  "Hecarim": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Heimerdinger": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Hwei": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Illaoi": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Irelia": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Ivern": {
+    "main_role": "Support",
+    "sub_role": "Mage"
+  },
+  "Janna": {
+    "main_role": "Support",
+    "sub_role": "Mage"
+  },
+  "JarvanIV": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Jax": {
+    "main_role": "Fighter",
+    "sub_role": null
+  },
+  "Jayce": {
+    "main_role": "Marksman",
+    "sub_role": "Fighter"
+  },
+  "Jhin": {
+    "main_role": "Marksman",
+    "sub_role": "Mage"
+  },
+  "Jinx": {
+    "main_role": "Marksman",
+    "sub_role": null
+  },
+  "Kaisa": {
+    "main_role": "Marksman",
+    "sub_role": "Mage"
+  },
+  "Kalista": {
+    "main_role": "Marksman",
+    "sub_role": null
+  },
+  "Karma": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Karthus": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Kassadin": {
+    "main_role": "Assassin",
+    "sub_role": "Mage"
+  },
+  "Katarina": {
+    "main_role": "Assassin",
+    "sub_role": "Mage"
+  },
+  "Kayle": {
+    "main_role": "Mage",
+    "sub_role": "Marksman"
+  },
+  "Kayn": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Kennen": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Khazix": {
+    "main_role": "Assassin",
+    "sub_role": null
+  },
+  "Kindred": {
+    "main_role": "Marksman",
+    "sub_role": null
+  },
+  "Kled": {
+    "main_role": "Fighter",
+    "sub_role": null
+  },
+  "KogMaw": {
+    "main_role": "Marksman",
+    "sub_role": "Mage"
+  },
+  "KSante": {
+    "main_role": "Tank",
+    "sub_role": "Fighter"
+  },
+  "Leblanc": {
+    "main_role": "Assassin",
+    "sub_role": "Mage"
+  },
+  "LeeSin": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Leona": {
+    "main_role": "Tank",
+    "sub_role": "Support"
+  },
+  "Lillia": {
+    "main_role": "Fighter",
+    "sub_role": "Mage"
+  },
+  "Lissandra": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Lucian": {
+    "main_role": "Marksman",
+    "sub_role": "Assassin"
+  },
+  "Lulu": {
+    "main_role": "Support",
+    "sub_role": "Mage"
+  },
+  "Lux": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Malphite": {
+    "main_role": "Tank",
+    "sub_role": "Mage"
+  },
+  "Malzahar": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Maokai": {
+    "main_role": "Tank",
+    "sub_role": "Support"
+  },
+  "MasterYi": {
+    "main_role": "Assassin",
+    "sub_role": "Fighter"
+  },
+  "Mel": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Milio": {
+    "main_role": "Support",
+    "sub_role": "Mage"
+  },
+  "MissFortune": {
+    "main_role": "Marksman",
+    "sub_role": "Mage"
+  },
+  "MonkeyKing": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Mordekaiser": {
+    "main_role": "Fighter",
+    "sub_role": "Mage"
+  },
+  "Morgana": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Naafiri": {
+    "main_role": "Assassin",
+    "sub_role": "Fighter"
+  },
+  "Nami": {
+    "main_role": "Support",
+    "sub_role": "Mage"
+  },
+  "Nasus": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Nautilus": {
+    "main_role": "Tank",
+    "sub_role": "Support"
+  },
+  "Neeko": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Nidalee": {
+    "main_role": "Assassin",
+    "sub_role": "Mage"
+  },
+  "Nilah": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Nocturne": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Nunu": {
+    "main_role": "Tank",
+    "sub_role": "Mage"
+  },
+  "Olaf": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Orianna": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Ornn": {
+    "main_role": "Tank",
+    "sub_role": null
+  },
+  "Pantheon": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Poppy": {
+    "main_role": "Tank",
+    "sub_role": "Fighter"
+  },
+  "Pyke": {
+    "main_role": "Support",
+    "sub_role": "Assassin"
+  },
+  "Qiyana": {
+    "main_role": "Assassin",
+    "sub_role": null
+  },
+  "Quinn": {
+    "main_role": "Marksman",
+    "sub_role": "Assassin"
+  },
+  "Rakan": {
+    "main_role": "Support",
+    "sub_role": null
+  },
+  "Rammus": {
+    "main_role": "Tank",
+    "sub_role": null
+  },
+  "RekSai": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Rell": {
+    "main_role": "Tank",
+    "sub_role": "Support"
+  },
+  "Renata": {
+    "main_role": "Support",
+    "sub_role": "Mage"
+  },
+  "Renekton": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Rengar": {
+    "main_role": "Assassin",
+    "sub_role": "Fighter"
+  },
+  "Riven": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Rumble": {
+    "main_role": "Fighter",
+    "sub_role": "Mage"
+  },
+  "Ryze": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Samira": {
+    "main_role": "Marksman",
+    "sub_role": "Assassin"
+  },
+  "Sejuani": {
+    "main_role": "Tank",
+    "sub_role": null
+  },
+  "Senna": {
+    "main_role": "Support",
+    "sub_role": "Marksman"
+  },
+  "Seraphine": {
+    "main_role": "Support",
+    "sub_role": "Mage"
+  },
+  "Sett": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Shaco": {
+    "main_role": "Assassin",
+    "sub_role": null
+  },
+  "Shen": {
+    "main_role": "Tank",
+    "sub_role": null
+  },
+  "Shyvana": {
+    "main_role": "Fighter",
+    "sub_role": "Mage"
+  },
+  "Singed": {
+    "main_role": "Tank",
+    "sub_role": "Mage"
+  },
+  "Sion": {
+    "main_role": "Tank",
+    "sub_role": "Fighter"
+  },
+  "Sivir": {
+    "main_role": "Marksman",
+    "sub_role": null
+  },
+  "Skarner": {
+    "main_role": "Tank",
+    "sub_role": "Fighter"
+  },
+  "Smolder": {
+    "main_role": "Marksman",
+    "sub_role": "Mage"
+  },
+  "Sona": {
+    "main_role": "Support",
+    "sub_role": "Mage"
+  },
+  "Soraka": {
+    "main_role": "Support",
+    "sub_role": "Mage"
+  },
+  "Swain": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Sylas": {
+    "main_role": "Mage",
+    "sub_role": "Assassin"
+  },
+  "Syndra": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "TahmKench": {
+    "main_role": "Tank",
+    "sub_role": "Support"
+  },
+  "Taliyah": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Talon": {
+    "main_role": "Assassin",
+    "sub_role": null
+  },
+  "Taric": {
+    "main_role": "Support",
+    "sub_role": "Tank"
+  },
+  "Teemo": {
+    "main_role": "Marksman",
+    "sub_role": "Mage"
+  },
+  "Thresh": {
+    "main_role": "Support",
+    "sub_role": "Tank"
+  },
+  "Tristana": {
+    "main_role": "Marksman",
+    "sub_role": "Assassin"
+  },
+  "Trundle": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Tryndamere": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "TwistedFate": {
+    "main_role": "Mage",
+    "sub_role": "Marksman"
+  },
+  "Twitch": {
+    "main_role": "Marksman",
+    "sub_role": "Assassin"
+  },
+  "Udyr": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Urgot": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Varus": {
+    "main_role": "Marksman",
+    "sub_role": "Mage"
+  },
+  "Vayne": {
+    "main_role": "Marksman",
+    "sub_role": "Assassin"
+  },
+  "Veigar": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Velkoz": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "Vex": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Vi": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Viego": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Viktor": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Vladimir": {
+    "main_role": "Mage",
+    "sub_role": "Fighter"
+  },
+  "Volibear": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Warwick": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Xayah": {
+    "main_role": "Marksman",
+    "sub_role": null
+  },
+  "Xerath": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  },
+  "XinZhao": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Yasuo": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Yone": {
+    "main_role": "Fighter",
+    "sub_role": "Assassin"
+  },
+  "Yorick": {
+    "main_role": "Fighter",
+    "sub_role": "Tank"
+  },
+  "Yuumi": {
+    "main_role": "Support",
+    "sub_role": "Mage"
+  },
+  "Zac": {
+    "main_role": "Tank",
+    "sub_role": "Fighter"
+  },
+  "Zed": {
+    "main_role": "Assassin",
+    "sub_role": null
+  },
+  "Zeri": {
+    "main_role": "Marksman",
+    "sub_role": null
+  },
+  "Ziggs": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Zilean": {
+    "main_role": "Support",
+    "sub_role": "Mage"
+  },
+  "Zoe": {
+    "main_role": "Mage",
+    "sub_role": null
+  },
+  "Zyra": {
+    "main_role": "Mage",
+    "sub_role": "Support"
+  }
+}
