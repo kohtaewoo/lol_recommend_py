@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from recommender.recommend import recommend_by_riot_id, load_recommendation_model
+from recommender.recommend import recommend_by_riot_id
 from recommender.cluster import predict_user_cluster, load_cluster_model
 import requests
 from urllib.parse import quote, unquote
@@ -11,8 +11,7 @@ load_dotenv()
 RIOT_API_KEY = os.getenv("RIOT_API_KEY")
 BACKEND_AUTH_KEY = os.getenv("BACKEND_AUTH_KEY")
 
-# ✅ 모델 글로벌 로딩 (서버 시작 시 1회만)
-recommendation_model = load_recommendation_model()
+# ✅ 클러스터링 모델 전역 로딩 (recommend는 내부에서 전역 사용 중)
 cluster_model = load_cluster_model()
 
 app = Flask(__name__)
@@ -20,6 +19,7 @@ app = Flask(__name__)
 # ✅ 공통 인증 함수
 def is_authorized():
     return request.headers.get("X-Backend-Key") == BACKEND_AUTH_KEY
+
 
 @app.route("/recommend", methods=["GET"])
 def recommend():
@@ -34,8 +34,8 @@ def recommend():
         riot_id = unquote(riot_id)
         headers = {"X-Riot-Token": RIOT_API_KEY}
 
-        # ✅ 모델 전달
-        recommendations, input_champions = recommend_by_riot_id(riot_id, headers, recommendation_model)
+        # ✅ 모델 전달 생략
+        recommendations, input_champions = recommend_by_riot_id(riot_id, headers)
         cluster_id, cluster_title, cluster_desc = predict_user_cluster(riot_id, headers, cluster_model)
 
         result = {
@@ -66,7 +66,7 @@ def check_user():
     try:
         riot_id = unquote(riot_id)
         name, tag = map(quote, riot_id.split("#", 1))
-        url = f"https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{name}/{tag}"
+        url = f"{REGION_ACCOUNT}/riot/account/v1/accounts/by-riot-id/{name}/{tag}"
         headers = {"X-Riot-Token": RIOT_API_KEY}
         res = requests.get(url, headers=headers)
 
