@@ -1,18 +1,18 @@
 from flask import Flask, request, jsonify
 from recommender.recommend import recommend_by_riot_id
-from recommender.cluster import predict_user_cluster, load_cluster_model
+from recommender.cluster import predict_user_cluster
 import requests
 from urllib.parse import quote, unquote
 import os
 from dotenv import load_dotenv
 
+# ✅ Riot API 지역 상수 직접 정의
+REGION_ACCOUNT = "https://americas.api.riotgames.com"
+
 # ✅ .env 파일 읽기
 load_dotenv()
 RIOT_API_KEY = os.getenv("RIOT_API_KEY")
 BACKEND_AUTH_KEY = os.getenv("BACKEND_AUTH_KEY")
-
-# ✅ 클러스터링 모델 전역 로딩 (recommend는 내부에서 전역 사용 중)
-cluster_model = load_cluster_model()
 
 app = Flask(__name__)
 
@@ -34,9 +34,9 @@ def recommend():
         riot_id = unquote(riot_id)
         headers = {"X-Riot-Token": RIOT_API_KEY}
 
-        # ✅ 모델 전달 생략
+        # ✅ 클러스터링 모델 전달 없이 호출
         recommendations, input_champions = recommend_by_riot_id(riot_id, headers)
-        cluster_id, cluster_title, cluster_desc = predict_user_cluster(riot_id, headers, cluster_model)
+        cluster_id, cluster_title, cluster_desc = predict_user_cluster(riot_id, headers)
 
         result = {
             "riotId": riot_id,
