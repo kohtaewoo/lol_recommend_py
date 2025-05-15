@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
-from recommender.recommend import recommend_by_riot_id
-from recommender.cluster import predict_user_cluster
+from recommender.recommend import recommend_by_riot_id, load_recommendation_model
+from recommender.cluster import predict_user_cluster, load_cluster_model
 import requests
 from urllib.parse import quote, unquote
 import os
@@ -10,6 +10,10 @@ from dotenv import load_dotenv
 load_dotenv()
 RIOT_API_KEY = os.getenv("RIOT_API_KEY")
 BACKEND_AUTH_KEY = os.getenv("BACKEND_AUTH_KEY")
+
+# ✅ 모델 글로벌 로딩 (서버 시작 시 1회만)
+recommendation_model = load_recommendation_model()
+cluster_model = load_cluster_model()
 
 app = Flask(__name__)
 
@@ -30,8 +34,9 @@ def recommend():
         riot_id = unquote(riot_id)
         headers = {"X-Riot-Token": RIOT_API_KEY}
 
-        recommendations, input_champions = recommend_by_riot_id(riot_id, headers)
-        cluster_id, cluster_title, cluster_desc = predict_user_cluster(riot_id, headers)
+        # ✅ 모델 전달
+        recommendations, input_champions = recommend_by_riot_id(riot_id, headers, recommendation_model)
+        cluster_id, cluster_title, cluster_desc = predict_user_cluster(riot_id, headers, cluster_model)
 
         result = {
             "riotId": riot_id,
@@ -68,8 +73,3 @@ def check_user():
         return jsonify({"exists": res.status_code == 200})
     except:
         return jsonify({"exists": False})
-
-
-#if __name__ == "__main__":
-#    port = int(os.environ.get("PORT", 5000))
-#    app.run(host="0.0.0.0", port=port)
