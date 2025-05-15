@@ -6,3 +6,4 @@ scikit-learn
 numpy
 openpyxl
 python-dotenv
+gunicorn
