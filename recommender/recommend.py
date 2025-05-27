@@ -15,7 +15,6 @@ from recommender import (
     champion_positions, penalty_user, penalty_master
 )
 
-
 def recommend_by_riot_id(riot_id, headers):
     name, tag = map(quote, riot_id.split("#", 1))
     input_vector = pd.Series(0.0, index=common_champs)
@@ -97,8 +96,12 @@ def recommend_by_riot_id(riot_id, headers):
 
         combined[champ] = base * (1 + bonus) + 7
 
-    # ✅ 입력 챔피언 제외
-    for champ in input_champions:
+    # ✅ 입력 챔피언 + 수동 제외 챔피언 제거
+    excluded_champs = set(input_champions) | {
+        "Ezreal", "LeeSin", "Yasuo", "Kaisa", "Thresh",
+        "Lucian", "Zed", "Sylas", "Vayne"
+    }
+    for champ in excluded_champs:
         combined.pop(champ, None)
 
     final = pd.Series(combined).sort_values(ascending=False).head(100)
